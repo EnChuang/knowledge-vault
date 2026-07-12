@@ -1,20 +1,28 @@
 ---
-title: (For Reader) Agent 指令範本
+title: Agent 指令範本
 tags:
   - 方法論/知識庫
   - 方法論/Bootstrap
   - 讀者/For Reader
 created: 2026-06-28
-updated: 2026-07-06
+updated: 2026-07-12
 ---
 
-# (For Reader) Agent 指令範本
+# Agent 指令範本
 
-> **給讀者複製貼上**。行為由 **`AGENTS.md`**（自動）+ **kv-* Skill**（觸發）負責。種子版本：**2026-07-06-v18**。
+**複製方塊裡的文字，貼進 Grok 對話。**  
+行為由 `AGENTS.md` + kv-\* Skill 負責；你不必背 Skill 名。
 
-**前提**：庫根有 `AGENTS.md`、`Bootstrap.md`、`MEMORY.md`、`skills/`；終端 **工作目錄＝庫根**；在庫根執行 `grok`；**開新對話**。
+種子：**2026-07-06-v18**
 
-**Skill 路徑**：kv-* 須在 `{庫根}/.grok/skills/`（建庫時由指令 ① 複製）。**不必**放在 `C:\Users\…\.grok\skills\`。詳見 **01 開箱導覽**。
+### 貼之前請確認
+
+- 終端 **工作目錄＝庫根**（有 `AGENTS.md`）  
+- 已在庫根執行 `grok`，且是**新對話**（建庫時）  
+- 庫根有：`AGENTS.md`、`Bootstrap.md`、`MEMORY.md`、`skills/`  
+- kv-\* 會進 `{庫根}/.grok/skills/`（指令 ① 會複製）；**不必**放使用者全域目錄  
+
+路徑說明 → [01-開箱導覽](./01-開箱導覽.md)
 
 ---
 
@@ -77,7 +85,7 @@ updated: 2026-07-06
 請載入 kv-rename 或 kv-rules-sync、kv-flow、kv-method（完整交付審查）。
 
 任務：{舊名→新名 或 規則變更}
-1. 全庫 grep → 待改清單（含 skills、Bootstrap、建庫開箱）
+1. 全庫 grep → 待改清單（含 skills、Bootstrap、docs、開箱相關路徑）
 2. 我說「請寫入」後才改檔
 3. 同步 Skill + Bootstrap 種子；改 skills/ 後跑 sync_package.py
 4. 再 grep 殘留
@@ -104,13 +112,13 @@ updated: 2026-07-06
 ```
 請載入 kv-audit、kv-rules-sync、kv-method（完整交付審查）。
 
-跑 G1–G10 健檢報告。G9 須對齊 建庫開箱（打包用）/ 與庫根。
-未請寫入前不改檔。G9 待修清零後再複製開箱包給他人。
+跑 G1–G10 健檢報告。開箱包／公開倉庫與庫根規則須對齊。
+未請寫入前不改檔。對齊通過後再 push 或複製給他人。
 ```
 
 ---
 
-## 指令 ⑧：新安裝後確認 Skill（建庫完必跑）
+## 指令 ⑧：新安裝後確認 Skill（建庫完建議跑）
 
 ```
 請依 AGENTS.md：
@@ -122,20 +130,21 @@ updated: 2026-07-06
 
 ---
 
-## 指令 ⑨：同步 Skill 與開箱包（完整庫維護者）
+## 指令 ⑨：同步 Skill（完整庫維護者）
 
 ```
 請載入 kv-rules-sync、kv-flow、kv-method（完整交付審查）。
 
 已改 skills/kv-*/ 或 AGENTS.md：
 1. python skills/kv-link-scan/scripts/sync_package.py
-2. 確認同步到庫根 .grok/skills/ 與 建庫開箱（打包用）/建庫開箱（打包用）/
-3. 簡報 G9 相關項是否對齊
+2. 確認同步到庫根 .grok/skills/ 與公開開箱包目錄
+3. 確認 MEMORY／DailyChange 種子未被個人 Session 覆寫
+4. 簡報是否可發版
 ```
 
 ---
 
-## 指令 ⑩：階段性收工（更新 AI 交班）
+## 指令 ⑩：階段性收工
 
 ```
 今天先這樣。請載入 kv-memory，詢問我是否更新 MEMORY.md。
@@ -144,15 +153,15 @@ updated: 2026-07-06
 
 ---
 
-## 常見狀況
+## 速查
 
-| 狀況 | 貼給 Agent |
-|------|------------|
-| 剛建庫／新電腦 | 指令 ⑧ |
-| 確認 Skill | `請依 AGENTS 列出本任務應載入的 kv-* Skill。` |
-| 只討論 | `只草稿，不請寫入。` |
-| 補連結 | 指令 ⑥；預設只報告 |
-| 改 Skill 後 | 指令 ⑨ |
-| 打包給別人 | 指令 ⑦；G9 通過後再複製本夾 |
-| AI 找不到 kv-* | 確認 cd 庫根 + `.grok/skills/` 存在；貼指令 ⑧ |
-| 今天先告一段落 | 指令 ⑩ |
+| 狀況 | 用 |
+|------|-----|
+| 剛建庫 | ① → ⑧ → ② |
+| 只討論 | 說「只草稿，不請寫入」 |
+| 補連結 | ⑥ |
+| 打包／發版前 | ⑦ |
+| 找不到 kv-\* | 確認庫根 + ⑧ |
+| 收工 | ⑩ |
+
+地圖 → [02-架構一頁紙](./02-架構一頁紙.md) · 首頁 → [README](../../README.md)

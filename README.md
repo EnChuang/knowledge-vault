@@ -1,290 +1,215 @@
 # Knowledge Vault
 
-**用 AI 幫你寫 Obsidian 知識庫——先講清規則，再動手改檔。**
+**你本來只是想用 AI 幫忙寫筆記。**  
+結果它改壞檔案、編造出處、換個對話就忘光上次做到哪——知識庫越用越亂。
+
+這個倉庫不是「又一個筆記模板」。它是一套**已經在實戰裡跑過**的玩法：  
+把 **Obsidian** 當你的檔案室，把 **Grok Build** 當會遵守規矩的助理——  
+**你負責決定；AI 負責執行；規則保證它不會越權。**
 
 [![Seed](https://img.shields.io/badge/seed-2026--07--06--v18-blue)](./Bootstrap.md)
 [![Skills](https://img.shields.io/badge/kv--skills-14-informational)](./skills/)
-[![Harness](https://img.shields.io/badge/harness-Grok%20Build-black)](https://x.ai/)
-
-> 一份**可重現的知識庫架構包**：放進空資料夾 → 庫根啟動 Grok → 貼建庫指令 → 長出與設計相同的分層規則、14 個執行 Skill，以及「草稿／請寫入」安全閘門。
-
-研究正文進 `Project/`，規則留在庫根，原文進 `Source/`。  
-**AI 讀規則做事；你讀筆記與變更日誌。**
+[![Release](https://img.shields.io/github/v/release/EnChuang/knowledge-vault)](https://github.com/EnChuang/knowledge-vault/releases)
 
 ---
 
-## Highlights
+## 這包能帶給你什麼？
 
-- **不會亂改你的庫** — 沒說「請寫入」就只出草稿  
-- **規則可打包帶走** — Bootstrap + 14 Skill，空機也能重建  
-- **專題地圖（MOC）** — 筆記樹、文獻、待延伸一眼看懂  
-- **原文與筆記分離** — PDF／書／圖在 `Source/`，筆記用連結指回  
-- **跨對話交班** — AI 有 `MEMORY`；你有空白的 `DailyChange` 記出貨  
-- **全庫可健檢** — G1–G10（連結、MOC、開箱對齊等）
+用完之後，你會得到的不是「更多 md 檔」，而是一種**可重複、可交接、可打包給別人**的工作方式：
 
----
+| 你會得到… | 實際感覺是… |
+|-----------|-------------|
+| **一個肯聽話的寫作搭檔** | 沒說「請寫入」它就只給草稿，不會偷偷改你的庫 |
+| **清楚的專題地圖** | 每個主題有 MOC：筆記長什麼樣、文獻在哪、還能往哪延伸 |
+| **讀得完的筆記** | 白皮書式段落、可自測的複習題，而不是碎卡片一堆 |
+| **原文有據** | PDF／書／圖放 `Source/`，筆記用連結指回去，少「AI 瞎掰」 |
+| **跨天接得上** | 你看變更日誌；AI 有自己的交班條——兩邊不打架 |
+| **換電腦也不怕** | 規則與 14 個 Skill 跟著資料夾走，空資料夾也能重建同一套架構 |
 
-## 目錄
-
-- [這包解決什麼問題？](#這包解決什麼問題)
-- [功能一覽](#功能一覽你裝好之後能做什麼)
-- [五分鐘開始](#五分鐘開始)
-- [日常怎麼用](#日常怎麼用最重要的三句話)
-- [誰讀什麼檔](#誰讀什麼檔)
-- [本包含什麼](#本包含什麼)
-- [架構長什麼樣](#架構長什麼樣)
-- [規則與 Skill](#規則與-skill速查)
-- [版本與更新](#版本與更新)
-- [常見問題](#幾個你可能會問的問題)
-- [授權](#授權)
+一句話：**讓 AI 幫你長知識，而不是幫你製造混亂。**
 
 ---
 
-## 這包解決什麼問題？
+## 它解決什麼問題？
 
-| 痛點 | 本包做法 |
-|------|----------|
-| AI 亂寫檔、發明文獻 | 沒說「**請寫入**」→ 只草稿；引讀須對齊 `Source/` |
-| 品質不穩 | 重大寫入前**完整交付審查** → 寫進你自己的 `DailyChange` |
-| 跨對話失憶 | `MEMORY.md` 給 AI 交班（你不必讀）；正文在 `Project/` |
-| 無法重現／給別人 | `Bootstrap` + 本包 Skill → 空庫重建同一套規則 |
+大多數人用 AI 寫知識庫時，痛點其實很具體：
 
----
+1. **AI 太主動** — 你還沒點頭，檔案已經改了；或一次改太多，事後對不回來。  
+2. **知識沒有形狀** — 對話裡好像懂了，存進庫卻散落、重名、斷連結。  
+3. **證據與筆記混在一起** — 原文、摘要、感想糊成一團，半年後分不清誰說的。  
+4. **換對話就失憶** — 助理不記得你在做哪一章、偏好什麼格式。  
+5. **無法給別人同一套規矩** — 自己調了很久的 prompt，別人從零又要再調一次。
 
-## 功能一覽（你裝好之後能做什麼）
+Knowledge Vault 的答案很簡單，也很硬：
 
-### 安全與品質
+> **規則分層、草稿預設、你說了才寫入；  
+> 研究正文、給人看的日誌、給 AI 的交班——各走各的檔。**
 
-- **草稿預設** — 討論、整理、引讀都可先只看草稿  
-- **請寫入閘門** — 你同意後才改檔；寫入前後有檢查清單  
-- **完整交付審查** — 重大交付 12 節對抗審查；致命問題會停手  
-- **你的變更日誌** — `Project/_DailyChange/DailyChange.md` 開箱時為**空白**
-
-### 知識怎麼長
-
-- **專題 MOC** — `{專題} — MOC.md`：簡介、筆記樹、文獻、待延伸  
-- **白皮書式筆記** — 可讀段落，不是碎卡片堆  
-- **讀者自測** — 整理後 10–20 題方便複習  
-- **電子書／長文蒸餾** — 預設章節格式（公式＋註解＋比喻、考點與答案）  
-- **原文與筆記分離** — `Source/literature|Ebook|Image`
-
-### 連結與維護
-
-- **wikilink 規範** — 知識節點 vs Source 路徑分開  
-- **掃描漏連** — 找出尚未 `[[連結]]` 的專有名詞  
-- **更名全庫更新** — 改檔名／專題名時對照整庫  
-- **健檢 G1–G10** — 連結、MOC、圖片、規則一致性等  
-
-### 跨對話記憶
-
-- **三分流** — 正文 `Project/` ／ 人看 `DailyChange` ／ AI 交班 `MEMORY`  
-- **收工先問** — 「今天先這樣」→ AI 先問要不要更新 MEMORY  
-
-### 可攜與可重現
-
-- **14 個 kv-\* Skill** — 按任務載入，不一次塞滿上下文  
-- **Bootstrap B0–B7** — 空夾長出四 Canon + 目錄  
-- **規則與正文分離** — 改研究筆記 ≠ 改 AI 憲法  
-
-逐步指令與路徑細節 → [`(For Reader) 01–03`](#建議閱讀順序)。
+| 若你曾這樣想… | 這裡怎麼接住你 |
+|---------------|----------------|
+| 「先別動我的檔，讓我看看草稿」 | 沒說「**請寫入**」＝只討論、只草稿 |
+| 「這章寫完要能複習」 | 整理時可帶讀者自測；電子書有固定章節格式 |
+| 「別發明文獻」 | 引讀走 `Source/`，對齊原文再蒸餾 |
+| 「明天接著寫」 | 收工時可更新 AI 交班；你自己的出貨紀錄在 `DailyChange` |
+| 「我想把這套給同事／未來的自己」 | 克隆本倉庫 → 建庫指令 → 同一套架構 |
 
 ---
 
-## 五分鐘開始
+## 適合誰？（以及誰可能不需要）
+
+**適合你，如果：**
+
+- 用（或願意用）**Obsidian** 管長期筆記  
+- 想讓 **AI Agent** 幫忙整理、引讀、維護連結，但**要握有最後決定權**  
+- 願意學三個詞：**請寫入**、**MOC**、**Source**  
+- 希望規則**可版本化、可重現**（像開源專案，而不是聊天記錄裡的口頭習慣）
+
+**可能不適合，如果：**
+
+- 你只要一次性問答，不需要長期知識庫  
+- 你希望 AI **全自動**改檔、零確認  
+- 你完全不用本機資料夾／Obsidian 這類檔案流  
+
+---
+
+## 五分鐘上手
 
 ### 你需要
 
-1. **Grok Build**（或能讀庫根 `AGENTS.md` + `.grok/skills/` 的相容環境）  
-2. 本倉庫**全部檔案**（至少：`AGENTS.md`、`Bootstrap.md`、`MEMORY.md`、`skills/`）  
-3. 一個空資料夾當**庫根**
+- [Grok Build](https://x.ai/)（或能讀庫根 `AGENTS.md` 與 `.grok/skills/` 的相容環境）  
+- 本倉庫（clone 或下載 ZIP）  
+- 一個空資料夾當「庫根」
 
-### 步驟
+### 做這四步
 
 ```text
-1. Clone 或下載本倉庫 → 內容放到空資料夾（該夾＝庫根）
-2. 終端機 cd 到庫根
-3. 執行 grok，開新對話
-4. 打開 (For Reader) 03 → 貼上【指令 ①】完整建庫
-5. 確認驗收：四 *_rules.md、.grok/skills/ 下 14 個 kv-*
-6. 貼【指令 ②】開第一個專題（說「請寫入」後才建檔）
+1. 把倉庫內容放進空資料夾（這夾＝庫根）
+2. 終端機 cd 到庫根 → 執行 grok → 開新對話
+3. 打開 docs/for-reader/03-Agent-指令範本.md
+   → 複製【指令 ①】貼給 AI（建立完整架構）
+4. 驗收通過後，再貼【指令 ②】開你的第一個專題
+   → 確認草稿沒問題，再說「請寫入」
 ```
 
-### 成功長這樣
+建好之後，庫根會多出四份規則（`*_rules.md`）、`.grok/skills/` 裡 14 個 Skill，以及空的 `Project/`、`Source/`。  
+**你的 `DailyChange` 一開始是空白的**——那是留給你記錄自己的重大交付，不是作者的日記。
 
-- 庫根有 `Grok_rules.md`、`MOC_rules.md`、`Project_rules.md`、`Source_rules.md`  
-- `{庫根}/.grok/skills/` 有 **14** 個 `kv-*/SKILL.md`  
-- `Project/`、`Source/` 骨架就緒  
-- `DailyChange.md` 仍是**空白**（等你第一次重大交付）
-
-**請在庫根啟動 `grok`。** Skill 在庫內 `.grok/skills/`，不必塞進 `~/.grok/skills/`。
+卡住時：先看 [docs/for-reader/01-開箱導覽.md](./docs/for-reader/01-開箱導覽.md) 的「Skill 放哪裡」；  
+九成問題是「沒在庫根啟動 grok」或「還沒跑建庫指令」。
 
 ---
 
-## 日常怎麼用（最重要的三句話）
+## 日常就記三件事
 
-1. **先討論、後落盤** — 沒說「請寫入」＝ AI 不改檔  
-2. **研究寫在專題裡** — `Project/{專題}/` + `{專題} — MOC.md`  
-3. **收工可以交班** — 「今天先這樣」→ AI 問要不要更新 `MEMORY.md`
+1. **先聊清楚，再落盤** — 沒說「請寫入」，AI 不改檔。  
+2. **知識住在專題裡** — `Project/你的主題/` + 一張 MOC 地圖。  
+3. **收工可以交班** — 說「今天先這樣」；AI 會問要不要更新它的記憶（你同意才寫）。
 
-| 你想… | 你可以這樣說／做 |
-|--------|------------------|
-| 弄懂概念 | 直接問；草稿即可 |
-| 討論變筆記 | 確認後說 **「請寫入」** |
-| 讀 PDF／書 | 檔放 `Source/`，請 AI 引讀蒸餾 |
-| 開新主題 | 專題名 → MOC 草稿 → 「請寫入」 |
-| 改名 | 舊名→新名，全庫對照後再「請寫入」 |
-| 掃連結 | 「掃描連結」；套用再說「請寫入」 |
-| 看出貨紀錄 | 打開 `Project/_DailyChange/DailyChange.md` |
-| 配色 | 配色查詢 → `Project/配色查詢表.md` |
+想做什麼 → 怎麼說，完整表在導覽裡；  
+**可直接複製貼上的指令**全部在  
+[`docs/for-reader/03-Agent-指令範本.md`](./docs/for-reader/03-Agent-指令範本.md)。
 
 ---
 
-## 誰讀什麼檔？
+## 接下來請讀這些（為人寫的導覽）
+
+README 只負責讓你「想用、敢用、知道第一步」。  
+細節、檢查清單、指令全文，都放在 **`docs/for-reader/`**，建議照順序：
+
+| 順序 | 檔案 | 讀它做什麼 |
+|------|------|------------|
+| ① 你在這裡 | [README.md](./README.md) | 為什麼用、能得到什麼、五分鐘開始 |
+| ② 地圖 | [02-架構一頁紙.md](./docs/for-reader/02-架構一頁紙.md) | 五分鐘看懂資料夾與規則怎麼分層 |
+| ③ 動手 | [03-Agent-指令範本.md](./docs/for-reader/03-Agent-指令範本.md) | **複製貼上**建庫、開專題、引讀、健檢… |
+| ④ 細則 | [01-開箱導覽.md](./docs/for-reader/01-開箱導覽.md) | Skill 路徑、安裝情境、FAQ、打包給別人 |
+
+資料夾索引：[`docs/for-reader/README.md`](./docs/for-reader/README.md)
+
+> 設計靈感接近好的開源 README：先講**人生哪裡變好**，再給安裝；  
+> 長說明拆到子頁，主頁保持好讀（參見 [readme-best-practices](https://github.com/jehna/readme-best-practices)、[awesome-readme](https://github.com/matiassingers/awesome-readme) 的「友好、可掃讀、有清楚下一步」）。
+
+---
+
+## 它大概長這樣（心智模型，不是規格書）
 
 ```text
-你 ──► README、For Reader 01–03、DailyChange、Project 筆記
-AI ──► AGENTS.md（每次）→ skills/kv-*
-       MEMORY.md（交班；你不必讀）
-       *_rules.md（需要完整條文時）
-```
-
-| 檔案 | 給誰 | 做什麼 |
-|------|------|--------|
-| `README.md` | 你 | 使用說明（本檔） |
-| `(For Reader) 01–03` | 你 | 導覽、一頁紙、可複製指令 |
-| `Project/**` | 你 + AI | 專題正文與 MOC |
-| `DailyChange.md` | **你為主** | 重大交付 Pass／改了什麼 |
-| `MEMORY.md` | **僅 AI** | 跨對話交班 |
-| `AGENTS.md` / `skills/` | AI | 入口與執行手冊 |
-| `Bootstrap.md` | AI（建庫） | 種子 B0–B7 |
-| `Source/**` | 你放、AI 引 | 原文 |
-
----
-
-## 本包含什麼？
-
-```text
-.
-├── README.md
-├── CHANGELOG.md              ← 版本變更紀錄
-├── LICENSE
-├── .gitignore
-├── (For Reader) 01 開箱導覽.md
-├── (For Reader) 02 架構一頁紙.md
-├── (For Reader) 03 Agent 指令範本.md
-├── AGENTS.md                 ← AI 常駐 L0
-├── Bootstrap.md              ← 建庫種子
-├── MEMORY.md                 ← AI 交班種子（空熱區）
-├── skills/kv-*/              ← 14 包執行規則
-└── Project/_DailyChange/
-    └── DailyChange.md        ← 空白變更日誌（給你用）
-```
-
-建庫後還會多：四份 `*_rules.md`、`Source/` 子目錄、`.grok/skills/`（由 `skills/` 複製）。
-
----
-
-## 架構長什麼樣？
-
-```text
-你的口頭指令（最高優先）
-    │
-    ▼
-AGENTS.md ──────── L0：去找哪個 Skill
-    ├── skills/kv-* ── 怎麼做（按需載入）
-    ├── *_rules.md ─── Canon 全文（需要時才讀）
-    └── Bootstrap.md ─ 空庫重置
-
-Project/        研究正文 + MOC
-Source/         原文
-MEMORY.md       僅 AI 交班
-DailyChange.md  你的出貨紀錄
+        你的決定（口頭指令永遠最大）
+                 │
+                 ▼
+           AGENTS.md ── 告訴 AI「這次該找誰」
+                 │
+     ┌───────────┼───────────┐
+     ▼           ▼           ▼
+  Skill 手冊   完整規則    建庫種子
+  (按需打開)   (必要才讀)  (空庫用)
 ```
 
 ```text
-對話結束 ──蒸餾──► MEMORY.md      （給下一輪 AI）
-              │
-              └──審查──► DailyChange （給你看）
-專題研究 ────────────► Project/    （長期知識）
+  對話裡聊完
+       │
+       ├─► Project/     真正的知識（你與未來的你都讀這裡）
+       ├─► DailyChange  重大出貨時你看的紀錄
+       └─► MEMORY.md    只給下一輪 AI 的交班條（你可忽略）
 ```
 
----
+原文進 `Source/`，筆記用連結指回去——**證據櫃**和**寫作桌**分開，之後才找得到東西。
 
-## 規則與 Skill（速查）
-
-| Canon | 管什麼 |
-|-------|--------|
-| `Grok_rules.md` | 寫入、連結、健檢 |
-| `Project_rules.md` | 筆記格式、更名、Ebook 章節 |
-| `MOC_rules.md` | 專題地圖 |
-| `Source_rules.md` | 原文引讀 |
-
-| Skill | 一句話 |
-|-------|--------|
-| **kv-method** | 輕量／完整交付審查 |
-| **kv-flow** | 請寫入前後檢查 |
-| **kv-project** | 整理筆記、自測、章節格式 |
-| **kv-moc** | 專題 MOC |
-| **kv-source** | 引讀原文 |
-| **kv-link** / **kv-link-scan** | 連結規則／掃描補連 |
-| **kv-memory** | 讀寫 MEMORY |
-| **kv-token** | 長文與讀取預算 |
-| **kv-rename** | 更名全庫對照 |
-| **kv-audit** | G1–G10 健檢 |
-| **kv-rules-sync** | 規則與種子同步 |
-| **kv-bootstrap** | 空庫建架構 |
-| **kv-palette** | 配色查詢表 |
-
-不必背名字：用白話說需求，AI 依 `AGENTS.md` 載入。
+若你想對照「檔案清單／Skill 名」，見導覽與架構一頁紙；  
+**不必背 14 個 Skill 名稱**，用白話說需求即可。
 
 ---
 
-## 版本與更新
+## 倉庫裡有什麼？
 
-| 名稱 | 用途 |
-|------|------|
-| **種子** `2026-07-06-v18` | 寫在 `AGENTS.md`／`Bootstrap.md`：規則體系內部代次 |
-| **Git 標籤** `v1.0.0` | GitHub Release 給下載者的公開版本（[語義化版本](https://semver.org/lang/zh-TW/)） |
+```text
+knowledge-vault/
+├── README.md                 ← 你正在讀（為什麼用、怎麼開始）
+├── docs/for-reader/          ← 給人的完整導覽與指令
+├── AGENTS.md                 ← AI 每次會讀的入口
+├── Bootstrap.md              ← 空庫重建步驟與種子
+├── MEMORY.md                 ← AI 交班種子（空的）
+├── skills/kv-*/              ← 14 個執行手冊
+├── Project/_DailyChange/     ← 你的空白變更日誌
+├── CHANGELOG.md
+└── LICENSE
+```
 
-變更摘要見 **[CHANGELOG.md](./CHANGELOG.md)**。  
-維護者更新流程與 commit 格式見下方「給維護者」與倉庫說明；一般使用者：`git pull` 或下載新 Release 後，對照 CHANGELOG 決定是否重跑 Bootstrap／只覆蓋 `skills/`。
+建庫完成後，AI 還會幫你長出 `*_rules.md`、`Source/` 子目錄，以及 `.grok/skills/`（執行用鏡像）。
 
 ---
 
-## 幾個你可能會問的問題
+## 常見疑問（短答）
 
 **一定要 Grok 嗎？**  
-本包依 Grok Build 的 Skill 發現路徑設計。其他 Agent 若能讀 `AGENTS.md` 與 Skill 目錄可嘗試，須自行驗證。
+這套 Skill 路徑是依 Grok Build 設計的。其他 Agent 若能讀同一套檔案可以試，但要自己驗。
 
-**DailyChange 為什麼是空的？**  
-那是**你的**出貨日誌，不帶原作者紀錄。第一次重大「請寫入」後才會開始寫。
+**為什麼有一堆規則檔？**  
+因為「只靠聊天習慣」無法重現。規則讓**下一台電腦、下一個你、下一個同事**得到同一套約束。
 
-**要讀 MEMORY.md 嗎？**  
-不必。看 `Project/` 與 `DailyChange` 即可。
+**MEMORY 我要讀嗎？**  
+不用。那是給 AI 的。你看 `Project/` 和 `DailyChange` 就夠。
 
-**Skill 要複製到 `C:\Users\我\.grok\skills\` 嗎？**  
-**不必。** 建庫時複製到**庫根** `.grok/skills/` 即可。
+**Skill 要裝到使用者目錄嗎？**  
+**不要。** 建庫時放在**這個知識庫資料夾**裡的 `.grok/skills/` 即可。
 
-**可以改規則嗎？**  
-可以。改完應同步 Bootstrap 種子（`kv-rules-sync`）。建議先用預設流程一陣子再改。
+更多 FAQ → [01-開箱導覽](./docs/for-reader/01-開箱導覽.md)。
 
 ---
 
-## 建議閱讀順序
+## 版本
 
-1. **本 README**（使用說明）  
-2. **`(For Reader) 02 架構一頁紙`**  
-3. **`(For Reader) 03`** — 複製指令給 AI  
-4. 需要細節 → **`(For Reader) 01`**
+- 公開版：見 [Releases](https://github.com/EnChuang/knowledge-vault/releases)  
+- 內部種子：`2026-07-06-v18`（寫在 AGENTS／Bootstrap）  
+- 變更紀錄：[CHANGELOG.md](./CHANGELOG.md)
 
 ---
 
 ## 授權
 
-見 [LICENSE](./LICENSE)。（預設 MIT：可自由使用、修改、再發布；請保留著作權聲明。）
+[MIT](./LICENSE) — 歡迎使用、修改、再分享；請保留著作權聲明。
 
 ---
 
-## 給維護者（一句）
-
-改 `skills/` 或 L0 後，在**完整庫**跑同步腳本、確認開箱包 `MEMORY`／`DailyChange` 仍為種子、更新 `CHANGELOG.md`、再 `git tag` + GitHub Release。細節見你完整庫 README 的打包說明與本專案的 commit 慣例（Conventional Commits）。
+**準備好了？**  
+打開 → [`docs/for-reader/03-Agent-指令範本.md`](./docs/for-reader/03-Agent-指令範本.md) → 貼上指令 ①。  
+祝你的知識庫，從此長得像一座有地圖的圖書館，而不是一堆沒標籤的紙箱。

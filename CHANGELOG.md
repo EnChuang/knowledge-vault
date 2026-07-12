@@ -8,13 +8,17 @@
 
 ### Added
 
-- （下次發布前把變更寫在這裡）
+- `docs/for-reader/`：導覽索引 + 01 開箱／02 一頁紙／03 指令範本（原根目錄 For Reader 遷入）
 
 ### Changed
+
+- README 改為人話開篇：先講能得到什麼、解決什麼，再上手；長說明拆到 `docs/for-reader/`
 
 ### Fixed
 
 ### Removed
+
+- 根目錄 `(For Reader) 01–03`（改由 `docs/for-reader/` 承載）
 
 ---
 
