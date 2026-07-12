@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*~
+
+# Grok / local runtime (rebuild from skills/ on bootstrap)
+.grok/
+
+# Local secrets / personal session (never ship)
+.env
+.env.*
+*.local
+
+# Optional: if someone builds a full vault inside a clone
+Source/literature/*
+Source/Ebook/*
+Source/Image/*
+!Source/**/.gitkeep
