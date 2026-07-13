@@ -76,7 +76,7 @@
 | **kv-memory** | `MEMORY.md` 解碼與分級讀寫 | 接續脈絡、請寫入後更新；**階段性收工必問**是否更新 |
 | **kv-token** | 讀取預算、冷啟動、產出分流 | 長文引讀、全庫 grep、多檔寫入 |
 | **kv-flow** | 寫入流程、§3／§4 檢查 | 請寫入、更名修復、健檢修復 |
-| **kv-project** | 白皮書、Ebook §12 章節格式、讀者自測、標籤、分段 | 子主題整理、Ebook 章節、寫入 Project |
+| **kv-project** | 知識長文、Ebook §12、讀者自測、標籤、分段 | 子主題整理、Ebook 章節、寫入 Project |
 | **kv-moc** | MOC 四段、M1–M10 | 讀寫 MOC、寫入子筆記 |
 | **kv-source** | 引讀五步、Ebook §12 預設、圖片 | 引用 Source、Ebook 引讀蒸餾 |
 | **kv-link** | wikilink 兩類型、高頻節點 | 寫入含連結、更名後連結 |
@@ -86,8 +86,9 @@
 | **kv-rules-sync** | L0／L1 對照、種子同步 | 寫入規則、改 L1 |
 | **kv-bootstrap** | B0–B7 建庫 | 空庫、重置規則體系 |
 | **kv-palette** | 配色查詢表去重讀寫 | 配色查詢、新增色板、PPT／畫圖取色 |
+| **kv-rebalance** | 同專題新 Source／要點增量後重劃筆記邊界與 MOC | 重平衡、重新分類、地圖重排、專題偏重單源 |
 
-Canon 對照：`Grok_rules`↔kv-flow+kv-link+kv-link-scan+kv-audit；`Project_rules`↔kv-project+kv-rename+kv-palette；`MOC_rules`↔kv-moc；`Source_rules`↔kv-source。
+Canon 對照：`Grok_rules`↔kv-flow+kv-link+kv-link-scan+kv-audit；`Project_rules`↔kv-project+kv-rename+kv-palette；`MOC_rules`↔kv-moc+kv-rebalance；`Source_rules`↔kv-source（增量整合→kv-rebalance）。
 
 ---
 
@@ -109,6 +110,7 @@ Canon 對照：`Grok_rules`↔kv-flow+kv-link+kv-link-scan+kv-audit；`Project_r
 | 全庫健檢／打包前 | kv-method（完整交付）→ kv-audit → kv-rules-sync |
 | 空庫／重置 | kv-bootstrap |
 | 配色查詢／新增色板 | kv-method → **kv-palette** → kv-flow；請寫入 → 完整交付 |
+| **專題重平衡**（同專題新 Source／地圖不均） | kv-method → **kv-rebalance** → kv-source（若新源）→ kv-project → kv-moc → kv-rename（若拆併更名）；請寫入 → 完整交付 + kv-flow |
 | 新領域 | 本檔 → 對應 Skill |
 
 未說「請寫入」→ **只出草稿**（kv-flow §1）。
@@ -122,7 +124,7 @@ Canon 對照：`Grok_rules`↔kv-flow+kv-link+kv-link-scan+kv-audit；`Project_r
 | 流程 | [[Grok_rules]] | kv-flow, kv-link, kv-audit |
 | 產出 | [[Project_rules]] | kv-project, kv-rename, kv-palette |
 | 來源 | [[Source_rules]] | kv-source |
-| 地圖 | [[MOC_rules]] | kv-moc |
+| 地圖 | [[MOC_rules]] | kv-moc, kv-rebalance |
 
 新建規範 → 寫 Canon + 同步 Skill + `Bootstrap.md` 種子（**kv-rules-sync**）。
 

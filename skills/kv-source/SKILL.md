@@ -44,6 +44,8 @@ Canon：`Source_rules.md`。原文不存在 → 告知用戶，不發明。
 
 影片／文獻／電子書皆適用；無法取得全片須說明限制。
 
+同專題已有筆記又來新 Source（新子域／舊卡過肥）→ **kv-rebalance**，勿預設只 append 舊卡。
+
 ## §5 Ebook 蒸餾預設
 
 Canon：`Source_rules.md` §5、`Project_rules.md` §12。

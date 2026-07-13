@@ -8,7 +8,14 @@
 
 ### Added
 
+- **kv-rebalance**：同專題新 Source 增量後重劃 MOC／筆記邊界  
+- L-全 **Narrative Quality** 檢查（知識長文）
+
 ### Changed
+
+- 整理筆記體裁預設改為**知識長文**（鉤子→命題→展開→收束；卡點譬喻）  
+- `kv-project`／`kv-flow`／Bootstrap MRC／讀者文案對齊「可連讀深度貼文」  
+- Skill 包數量：15（含 kv-rebalance）
 
 ### Fixed
 

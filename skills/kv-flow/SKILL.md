@@ -25,7 +25,7 @@ Canon 全文：`Grok_rules.md` §2–§4、§8。執行以本 Skill 為準。
 | 證據 | 禁止自行發明數據 |
 | 規則歸屬 | 規範只寫 L0/Skill/Canon |
 | 連結 | **kv-link**；每句 ≤2–3 wikilink |
-| 講解重點 | 整理／蒸餾時 **kv-project** §5b：至少一則比喻釐清 |
+| 講解重點 | 整理／蒸餾時 **kv-project** §5b：**卡點譬喻**（先喻後理）；知識長文須鉤子／命題／收束 |
 
 ## §2 流程
 
@@ -52,12 +52,12 @@ Canon 全文：`Grok_rules.md` §2–§4、§8。執行以本 Skill 為準。
 | A2 | Source 帶路徑+副檔名；知識節點無路徑 |
 | A3 | 高頻節點 wikilink 統一 |
 | A4 | 圖在 `Source/Image/` |
-| A5 | Project 段落敘事 |
+| A5 | 知識長文：敘事主導＋鉤子／命題／收束（§2 例外可冷寫） |
 | A6 | 無自動討論問題、無預填 MOC |
 
 ### B Project
 
-B1 MOC 連動 · B2 只加本次筆記 · B3 frontmatter+tags · B4 非規則條文 · B5 白皮書80% · B6 三一致命名 · B7 自測通過
+B1 MOC 連動 · B2 只加本次筆記 · B3 frontmatter+tags · B4 非規則條文 · B5 80%自足＋命題可復述 · B6 三一致命名 · B7 自測通過 · B8 非例外檔禁止通篇表開場／無敘事
 
 ### C Source
 

@@ -41,6 +41,8 @@ updated: {YYYY-MM-DD}
 | **Fatal Problems** | （無則寫「無」） |
 | **Notes** | 非阻塞建議 |
 
+涉知識長文時，§6 或 §11 可附 **Narrative Quality**：鉤子／命題／收束／卡點譬喻／是否表開場。通篇條列無敘事 → Fatal；譬喻偏少 → Notes。
+
 ---
 
 ## 開放風險（跨任務，仍有效才留）
