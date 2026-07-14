@@ -8,7 +8,7 @@
 **你負責決定；AI 負責執行；規則保證它不會越權。**
 
 [![Seed](https://img.shields.io/badge/seed-2026--07--06--v18-blue)](./Bootstrap.md)
-[![Skills](https://img.shields.io/badge/kv--skills-14-informational)](./skills/)
+[![Skills](https://img.shields.io/badge/kv--skills-15-informational)](./skills/)
 [![Release](https://img.shields.io/github/v/release/EnChuang/knowledge-vault)](https://github.com/EnChuang/knowledge-vault/releases)
 
 ---
@@ -21,10 +21,10 @@
 |-----------|-------------|
 | **一個肯聽話的寫作搭檔** | 沒說「請寫入」它就只給草稿，不會偷偷改你的庫 |
 | **清楚的專題地圖** | 每個主題有 MOC：筆記長什麼樣、文獻在哪、還能往哪延伸 |
-| **讀得完的筆記** | 知識長文（鉤子／命題／敘事）、可自測的複習題，而不是碎卡片一堆 |
+| **讀得完的筆記** | 知識長文（開篇／命題／敘事）、可自測的複習題，而不是碎卡片一堆 |
 | **原文有據** | PDF／書／圖放 `Source/`，筆記用連結指回去，少「AI 瞎掰」 |
 | **跨天接得上** | 你看變更日誌；AI 有自己的交班條——兩邊不打架 |
-| **換電腦也不怕** | 規則與 14 個 Skill 跟著資料夾走，空資料夾也能重建同一套架構 |
+| **換電腦也不怕** | 規則與 15 個 Skill 跟著資料夾走，空資料夾也能重建同一套架構 |
 
 一句話：**讓 AI 幫你長知識，而不是幫你製造混亂。**
 
@@ -91,7 +91,7 @@ Knowledge Vault 的答案很簡單，也很硬：
    → 確認草稿沒問題，再說「請寫入」
 ```
 
-建好之後，庫根會多出四份規則（`*_rules.md`）、`.grok/skills/` 裡 14 個 Skill，以及空的 `Project/`、`Source/`。  
+建好之後，庫根會多出四份規則（`*_rules.md`）、`.grok/skills/` 裡 15 個 Skill，以及空的 `Project/`、`Source/`。  
 **你的 `DailyChange` 一開始是空白的**——那是留給你記錄自己的重大交付，不是作者的日記。
 
 卡住時：先看 [docs/for-reader/01-開箱導覽.md](./docs/for-reader/01-開箱導覽.md) 的「Skill 放哪裡」；  
@@ -155,7 +155,7 @@ README 只負責讓你「想用、敢用、知道第一步」。
 原文進 `Source/`，筆記用連結指回去——**證據櫃**和**寫作桌**分開，之後才找得到東西。
 
 若你想對照「檔案清單／Skill 名」，見導覽與架構一頁紙；  
-**不必背 14 個 Skill 名稱**，用白話說需求即可。
+**不必背 15 個 Skill 名稱**，用白話說需求即可。
 
 ---
 
@@ -168,7 +168,7 @@ knowledge-vault/
 ├── AGENTS.md                 ← AI 每次會讀的入口
 ├── Bootstrap.md              ← 空庫重建步驟與種子
 ├── MEMORY.md                 ← AI 交班種子（空的）
-├── skills/kv-*/              ← 14 個執行手冊
+├── skills/kv-*/              ← 15 個執行手冊
 ├── Project/_DailyChange/     ← 你的空白變更日誌
 ├── CHANGELOG.md
 └── LICENSE

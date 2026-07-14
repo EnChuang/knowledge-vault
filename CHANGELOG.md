@@ -13,9 +13,10 @@
 
 ### Changed
 
-- 整理筆記體裁預設改為**知識長文**（鉤子→命題→展開→收束；卡點譬喻）  
-- `kv-project`／`kv-flow`／Bootstrap MRC／讀者文案對齊「可連讀深度貼文」  
-- Skill 包數量：15（含 kv-rebalance）
+- 知識長文骨架用語：**鉤子 → 開篇**（開篇→命題→展開→收束；卡點譬喻）  
+- `kv-project`／`kv-flow`／`kv-method`／`Project_rules`／`Grok_rules`／Bootstrap／讀者文案對齊  
+- Skill 包數量：**15**（含 kv-rebalance）  
+- README／開箱導覽徽章與文案：14 → 15 Skills  
 
 ### Fixed
 
@@ -38,8 +39,4 @@
 ### Notes
 
 - 種子版本：**2026-07-06-v18**  
-- 載具：Grok Build（庫根啟動）  
-- 倉庫：https://github.com/EnChuang/knowledge-vault  
-
-[Unreleased]: https://github.com/EnChuang/knowledge-vault/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/EnChuang/knowledge-vault/releases/tag/v1.0.0
+- 公開 repo **不含**作者私人 `Project/` 研究筆記與 `Source/` 原文  

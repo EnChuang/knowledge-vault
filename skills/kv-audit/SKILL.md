@@ -23,7 +23,7 @@ Canon：`Grok_rules.md` §9。未請寫入 → 只出報告。
 | G2  | 知識 wikilink | `Project/`、L0/L1 內 `[[節點]]` 目標存在  |
 | G3  | Source 連結   | piped link、圖片路徑實體存在                  |
 | G4  | 圖片          | 孤兒圖列出；**用戶確認後**才刪          |
-| G5  | MOC           | 四段齊；M1–M10；樹只鏈存在筆記               |
+| G5  | MOC           | 五段齊（含整理規範）；M1–M10；樹只鏈存在筆記  |
 | G6  | frontmatter   | 三一致；tags 無空格                           |
 | G7  | 目錄          | Project/README 與實體一致                     |
 | G8  | L0/L1/Skill   | AGENTS、Canon、Bootstrap、skills 無非刻意漂移 |

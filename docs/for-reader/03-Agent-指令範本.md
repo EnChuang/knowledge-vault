@@ -62,7 +62,7 @@ updated: 2026-07-12
 ```
 請載入 kv-project、kv-moc、kv-flow、kv-method（輕量審查）。
 
-專題「{專題名}」子主題「{子主題名}」：先草稿，符合知識長文（鉤子／命題／收束）與讀者自測。
+專題「{專題名}」子主題「{子主題名}」：先草稿，符合知識長文（開篇／命題／收束）與讀者自測。
 我說「請寫入」後跑完整交付審查再寫入並同步 MOC。
 ```
 
@@ -122,7 +122,7 @@ updated: 2026-07-12
 
 ```
 請依 AGENTS.md：
-1. 列出本庫應存在的 14 個 kv-* Skill 名稱（含 kv-memory、kv-palette）
+1. 列出本庫應存在的 15 個 kv-* Skill 名稱（含 kv-memory、kv-palette）
 2. 確認庫根 .grok/skills/ 下各有 SKILL.md（不必檢查 ~/.grok/skills/）
 3. 說明我下一個「請寫入 Project」任務會載入哪些 Skill、依什麼順序
 4. 若 .grok/skills/ 缺失，從 skills/ 複製並回報
