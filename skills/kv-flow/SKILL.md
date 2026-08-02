@@ -25,7 +25,7 @@ Canon 全文：`Grok_rules.md` §2–§4、§8。執行以本 Skill 為準。
 | 證據 | 禁止自行發明數據 |
 | 規則歸屬 | 規範只寫 L0/Skill/Canon |
 | 連結 | **kv-link**；每句 ≤2–3 wikilink |
-| 講解重點 | 整理／蒸餾時 **kv-project** §5b：**卡點譬喻**（先喻後理）；知識長文須開篇／命題／收束 |
+| 講解重點 | 整理／蒸餾時 **kv-project**：**科普掃讀**＋卡點一句譬喻；非 Ebook 須 30 秒帶走／收束 |
 
 ## §2 流程
 
@@ -52,12 +52,12 @@ Canon 全文：`Grok_rules.md` §2–§4、§8。執行以本 Skill 為準。
 | A2 | Source 帶路徑+副檔名；知識節點無路徑 |
 | A3 | 高頻節點 wikilink 統一 |
 | A4 | 圖在 `Source/Image/` |
-| A5 | 知識長文：敘事主導＋開篇／命題／收束（§2 例外可冷寫） |
+| A5 | 非 Ebook：科普掃讀（30 秒／分鏡／收束）；Ebook §12 另遵（§2 例外可冷寫） |
 | A6 | 無自動討論問題、無預填 MOC |
 
 ### B Project
 
-B1 MOC 連動 · B2 只加本次筆記 · B3 frontmatter+tags · B4 非規則條文 · B5 80%自足＋命題可復述 · B6 三一致命名 · B7 自測通過 · B8 非例外檔禁止通篇表開場／無敘事
+B1 MOC 連動 · B2 只加本次筆記 · B3 frontmatter+tags · B4 非規則條文 · B5 80%自足＋命題可復述 · B6 三一致命名 · B7 自測通過 · B8 非 Ebook：有 30 秒與收束、禁長散文牆
 
 ### C Source
 

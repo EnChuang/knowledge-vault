@@ -36,7 +36,7 @@ updated: 2026-07-12
 1. 建立 B1 目錄（含 MEMORY.md、Project/_DailyChange/DailyChange.md 種子）
 2. 複製 skills/kv-*/ 到庫根 .grok/skills/（必須；勿覆寫使用者 ~/.grok/skills/ 內建 Skill）
 3. 建立四 L1 Canon（Grok→MOC→Project→Source）；若本開箱包無詳盡 Canon，從種子建 MRC 並註明可後續對齊完整庫
-4. B7 驗收回報（含 .grok/skills/ 下 14 包 kv-*，含 kv-memory、kv-palette）
+4. B7 驗收回報（含 .grok/skills/ 下 15 包 kv-*，含 kv-memory、kv-palette、kv-rebalance）
 5. 列出庫根檔案樹
 
 未通過驗收前不要寫 Project 筆記。
@@ -62,7 +62,7 @@ updated: 2026-07-12
 ```
 請載入 kv-project、kv-moc、kv-flow、kv-method（輕量審查）。
 
-專題「{專題名}」子主題「{子主題名}」：先草稿，符合知識長文（開篇／命題／收束）與讀者自測。
+專題「{專題名}」子主題「{子主題名}」：先草稿，符合科普掃讀（30 秒／分鏡／收束）與讀者自測；若該專題 MOC「整理規範」另有體裁則從之。
 我說「請寫入」後跑完整交付審查再寫入並同步 MOC。
 ```
 

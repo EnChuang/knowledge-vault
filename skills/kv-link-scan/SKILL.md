@@ -33,8 +33,8 @@ Canon：`Grok_rules.md` §5。寫入規範疊加 **kv-link**、**kv-project** §
 
 1. `Project/{專題}/*.md` 的 **檔名**（去 `.md`）＝ `title` 節點名
 2. 各 `{專題} — MOC.md` 樹狀圖內 `[[wikilink]]`（含別名節點）
-3. MOC `aliases`（專題別名，如 `Agent Harness`）
-4. **kv-link** 高頻節點：`Agent Harness`、`Session`、`MOC`、`Grok Build`
+3. MOC `aliases`（專題別名，如 `Agent Harness` → `AI Agent 工程`）
+4. **kv-link** 高頻節點：`AI Agent 工程`、`Session`、`MOC`、`Grok Build`
 
 排除：`Project/_DailyChange/`、`*_rules.md`、`MEMORY.md`、L0/L1、Skill 檔。
 
@@ -126,7 +126,7 @@ python skills/kv-link-scan/scripts/scan_unlinked.py --json
 
 # 請寫入：套用白名單區段（每段 ≤2 連結）
 python skills/kv-link-scan/scripts/apply_unlinked.py
-python skills/kv-link-scan/scripts/apply_unlinked.py --topic "Agent Harness"
+python skills/kv-link-scan/scripts/apply_unlinked.py --topic "AI Agent 工程"
 ```
 
 `scan_unlinked.py` 只產報告；`apply_unlinked.py` 改檔前須用戶請寫入 + §8。

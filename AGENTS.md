@@ -76,7 +76,7 @@
 | **kv-memory** | `MEMORY.md` 解碼與分級讀寫 | 接續脈絡、請寫入後更新；**階段性收工必問**是否更新 |
 | **kv-token** | 讀取預算、冷啟動、產出分流 | 長文引讀、全庫 grep、多檔寫入 |
 | **kv-flow** | 寫入流程、§3／§4 檢查 | 請寫入、更名修復、健檢修復 |
-| **kv-project** | 知識長文、Ebook §12、讀者自測、標籤、分段 | 子主題整理、Ebook 章節、寫入 Project |
+| **kv-project** | 科普掃讀體、Ebook §12、讀者自測、標籤、分段 | 子主題整理、Ebook 章節、寫入 Project |
 | **kv-moc** | MOC 五段（含整理規範）、M1–M10 | 讀寫 MOC、寫入子筆記 |
 | **kv-source** | 引讀五步、Ebook §12 預設、圖片 | 引用 Source、Ebook 引讀蒸餾 |
 | **kv-link** | wikilink 兩類型、高頻節點 | 寫入含連結、更名後連結 |

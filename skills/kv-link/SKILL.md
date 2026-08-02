@@ -22,7 +22,7 @@ Canon：`Grok_rules.md` §5。
 
 ## 高頻節點（正文必須 wikilink）
 
-`[[Agent Harness]]` · `[[Session]]` · `[[MOC]]` · `[[Grok Build]]`
+`[[AI Agent 工程]]` · `[[Session]]` · `[[MOC]]` · `[[Grok Build]]`
 
 ## 建立順序
 

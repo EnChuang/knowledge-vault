@@ -44,7 +44,7 @@ metadata:
 
 ## Project 筆記
 
-- **維持知識長文敘事**；不將 Project 正文 caveman 化
+- **維持科普掃讀可讀性**；不將 Project 正文 caveman 化；Ebook §12 維持公式可讀
 - 規則執行層可精簡；產出層保持可讀段落
 
 ## 長任務

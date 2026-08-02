@@ -74,7 +74,7 @@ metadata:
 
 1. Task Restatement · 2. Success Criteria · 3. First-Principles Decomposition · 4. Assumptions & Dependencies · 5. Plan vs Alternatives · 6. Rule/Skill Compliance · 7. Evidence & Canon Alignment · 8. Edge Cases · 9. Token/Scope Discipline · 10. Pre-Mortem · 11. Residual Risks · 12. Final Verdict（含 Fatal Problems）
 
-涉知識長文時：§6 或 §11 附 **Narrative Quality**（開篇／命題／收束／卡點譬喻／表開場）。通篇條列無敘事 → Fatal；譬喻偏少 → Pass-with-Notes。
+涉非 Ebook 整理筆記時：§6 或 §11 附 **Scan Quality**（30 秒帶走／分鏡／收束／卡點譬喻）。長散文牆無分鏡 → Fatal；缺 30 秒或收束 → Fatal；譬喻偏少 → Pass-with-Notes。Ebook §12 另檢公式＋10 題閘門。
 
 ## 與其他 Skill
 
