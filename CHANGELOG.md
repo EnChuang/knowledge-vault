@@ -2,7 +2,22 @@
 
 本專案遵循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，版本號遵循 [Semantic Versioning](https://semver.org/lang/zh-TW/)。
 
-內部**種子代次**（寫在 `AGENTS.md`／`Bootstrap.md`）與 Git 標籤可並存：公開 `v1.1.0` 對應種子 `2026-07-06-v18`。
+內部**種子代次**（寫在 `AGENTS.md`／`Bootstrap.md`）與 Git 標籤可並存：公開 `v1.1.1` 對應種子 `2026-07-06-v18`。
+
+## [1.1.1] - 2026-08-02
+
+### Changed
+
+- AGENTS：**規則命名一覽**（L0 入口索引；L1 流程／產出／來源／地圖人話名；磁碟檔名不變）  
+- AGENTS：新領域／非筆記任務例表；規則歸屬 **L0 + Skill + Canon**  
+- `sync_package.py`：開箱 **MEMORY／DailyChange 固定空白種子**（不複製私人交班）  
+- Bootstrap 種子用語對齊「啟動協議」  
+
+### Notes
+
+- 種子版本仍為 **2026-07-06-v18**  
+
+---
 
 ## [1.1.0] - 2026-08-02
 
