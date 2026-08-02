@@ -1,8 +1,27 @@
-# 知識庫 — L0 索引（Skill 驅動）
+# L0 · 入口索引（AGENTS）
 
 本檔為 Grok Session **唯一常駐載入**的規則入口。執行細節在 **kv-* Skill**；Canon 全文在庫根 `*_rules.md`（Skill 觸發時才讀）。
 
 **可重現性**：空庫僅有本檔 → 載入 **kv-bootstrap** Skill，讀 `Bootstrap.md` B0→B7。種子版本：**2026-07-06-v18**。
+
+---
+
+## 規則命名一覽（先認名，細節再下鑽）
+
+| 層 | 人話名 | 磁碟檔名 | 何時讀 |
+|----|--------|----------|--------|
+| **L0** | **入口索引** | `AGENTS.md`（本檔） | 每次 Session 常駐 |
+| **L1 · 流程** | **流程規則** | `Grok_rules.md` | Skill 要求或寫入／健檢／連結 |
+| **L1 · 產出** | **產出規則** | `Project_rules.md` | 整理／寫入 Project 筆記 |
+| **L1 · 來源** | **來源規則** | `Source_rules.md` | 引讀 Source／Ebook／圖 |
+| **L1 · 地圖** | **地圖規則** | `MOC_rules.md` | 讀寫 MOC、子筆記對齊整理規範 |
+| **執行** | **kv-\* Skill** | `skills/kv-*/SKILL.md` | 依任務表觸發（細節在此） |
+| **種子** | **建庫種子** | `Bootstrap.md` | 空庫／重置 |
+| **交班資料** | **機器交班** | `MEMORY.md` | 非規則正文；kv-memory 按需 |
+
+**命名原則**：人話名＝職責一句；磁碟檔名穩定不改（避免全庫斷鏈）。要細節 → 開對應檔或 Skill，勿把全文堆回 L0。
+
+**非本庫開箱、個人工程鏈**（`~/.grok/skills/`）：`clarify-first`（釐清）· `plan-then-build`（計畫）· `cap`（改碼契約）— 與 kv 寫庫閘並存時：**寫入知識庫仍遵請寫入／kv-flow**。
 
 ---
 
@@ -25,7 +44,7 @@
 
 | 檢查 | 若缺失 | 動作 |
 |------|--------|------|
-| 四 L1（`Grok_rules`、`MOC_rules`、`Project_rules`、`Source_rules`） | 任一不存在 | **kv-bootstrap** → `Bootstrap.md` B0→B7 |
+| 四 L1（流程 `Grok_rules`、地圖 `MOC_rules`、產出 `Project_rules`、來源 `Source_rules`） | 任一不存在 | **kv-bootstrap** → `Bootstrap.md` B0→B7 |
 | `Project/`、`Source/` 子目錄 | 不存在 | Bootstrap B1 |
 | 當次專題 MOC | 不存在且將**請寫入** | 對齊專題名 → 最小 `{專題} — MOC.md`（**kv-moc**） |
 | 當次專題 MOC | 不存在且僅討論 | 可暫不建；搜尋跳過 MOC 階 |
@@ -119,22 +138,32 @@ Canon 對照：`Grok_rules`↔kv-flow+kv-link+kv-link-scan+kv-audit；`Project_r
 
 ## L1 分類（Canon 歸檔用）
 
-| 軸 | Canon 檔 | 對應 Skill |
-|----|----------|------------|
-| 流程 | [[Grok_rules]] | kv-flow, kv-link, kv-audit |
-| 產出 | [[Project_rules]] | kv-project, kv-rename, kv-palette |
-| 來源 | [[Source_rules]] | kv-source |
-| 地圖 | [[MOC_rules]] | kv-moc, kv-rebalance |
+| 人話名 | 軸 | Canon 檔 | 對應 Skill |
+|--------|----|----------|------------|
+| 流程規則 | 流程 | [[Grok_rules]] | kv-flow, kv-link, kv-link-scan, kv-audit |
+| 產出規則 | 產出 | [[Project_rules]] | kv-project, kv-rename, kv-palette |
+| 來源規則 | 來源 | [[Source_rules]] | kv-source |
+| 地圖規則 | 地圖 | [[MOC_rules]] | kv-moc, kv-rebalance |
 
 新建規範 → 寫 Canon + 同步 Skill + `Bootstrap.md` 種子（**kv-rules-sync**）。
 
+### 新領域／非筆記任務（例）
+
+| 用戶說… | 先載 | 備註 |
+|---------|------|------|
+| 配色、色板、PPT 取色 | kv-palette | 非專題筆記 |
+| 空庫、規則全沒了 | kv-bootstrap | 勿先寫 Project |
+| 健檢、打包前對齊 | kv-audit → kv-rules-sync | G9 開箱 |
+| 專題地圖歪、單源偏重 | kv-rebalance | 先報告再請寫入 |
+| 程式實作／修 bug（非寫庫） | 全域 cap／plan-then-build／clarify-first | **不**用 kv-project 當驗收 |
+| 只問概念、不改檔 | kv-method（輕） | 止搜、不預載四 L1 全文 |
 ---
 
 ## 知識庫目錄
 
 | 路徑 | 內容 | AI 常駐？ |
 |------|------|----------|
-| `AGENTS.md` | L0 索引 | **是** |
+| `AGENTS.md` | L0 · 入口索引 | **是** |
 | `MEMORY.md` | 僅 AI 之 Session 交班（機器格式） | 否（**kv-memory** 按需） |
 | `Bootstrap.md` | 建庫種子 | 僅 kv-bootstrap |
 | `skills/kv-*/SKILL.md` | 執行規則 | 依任務觸發 |
@@ -151,9 +180,9 @@ Canon 對照：`Grok_rules`↔kv-flow+kv-link+kv-link-scan+kv-audit；`Project_r
 ## L0 僅管這些
 
 - 規則正文用「**知識庫**」；顯示名稱見上表
-- 須遵守的規範：L0 + Skill + Canon（不堆進 `Project/`）
+- 須遵守的規範：**L0 + Skill + Canon**（執行細節在 Skill；Canon 按需；不堆進 `Project/`）
 - 改 Canon → 同步 Skill + `Bootstrap.md` 種子
-- 改 `skills/` 或 L0 涉架構 → **kv-rules-sync** + `python skills/kv-link-scan/scripts/sync_package.py`（→ `.grok/skills/` + 開箱包）
+- 改 `skills/` 或 L0 涉架構 → **kv-rules-sync** + `python skills/kv-link-scan/scripts/sync_package.py`（→ `.grok/skills/` + 開箱包；開箱 **MEMORY／DailyChange 用空白種子**）
 - 庫根啟動 `grok`；先跑啟動前置
 - 「請寫入」→ **kv-flow** §3 → §4；交付前 **kv-method** 完整交付審查
 - 階段性收工（今天先這樣、先告一段落等）→ **kv-memory** 詢問是否更新 `MEMORY.md`
