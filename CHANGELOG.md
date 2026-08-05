@@ -4,6 +4,14 @@
 
 內部**種子代次**（寫在 `AGENTS.md`／`Bootstrap.md`）與 Git 標籤可並存：公開 `v1.1.1` 對應種子 `2026-07-06-v18`。
 
+## [Unreleased]
+
+### Changed
+
+- 全庫寫作：**中英術語完整**（禁英譯半截詞；給人讀的文案更嚴）— `Project_rules`、`Grok_rules`、kv-project／kv-flow、AGENTS、開箱 README／for-reader  
+
+---
+
 ## [1.1.1] - 2026-08-02
 
 ### Changed

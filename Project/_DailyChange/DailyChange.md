@@ -3,7 +3,7 @@ title: DailyChange
 tags:
   - 方法論/DailyChange
 created: 2026-07-02
-updated: 2026-08-02
+updated: 2026-08-05
 ---
 
 # DailyChange

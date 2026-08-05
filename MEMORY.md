@@ -2,10 +2,10 @@
 title: MEMORY
 tags:
   - 方法論/Memory
-updated: 2026-08-02
+updated: 2026-08-05
 ---
 
-#M2 u=260802 s=v18
+#M2 u=260805 s=v18
 
 [HOT]
 act=-
