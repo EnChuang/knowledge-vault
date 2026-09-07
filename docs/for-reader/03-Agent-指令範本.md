@@ -1,4 +1,4 @@
----
+﻿---
 title: Agent 指令範本
 tags:
   - 方法論/知識庫
@@ -10,7 +10,7 @@ updated: 2026-07-12
 
 # Agent 指令範本
 
-**複製方塊裡的文字，貼進 Grok 對話。**  
+**複製方塊裡的文字，貼進 Agent 對話。**  
 行為由 `AGENTS.md` + kv-\* Skill 負責；你不必背 Skill 名。
 
 種子：**2026-07-06-v18**
@@ -18,9 +18,9 @@ updated: 2026-07-12
 ### 貼之前請確認
 
 - 終端 **工作目錄＝庫根**（有 `AGENTS.md`）  
-- 已在庫根執行 `grok`，且是**新對話**（建庫時）  
+- 已在庫根執行 `agent`，且是**新對話**（建庫時）  
 - 庫根有：`AGENTS.md`、`Bootstrap.md`、`MEMORY.md`、`skills/`  
-- kv-\* 會進 `{庫根}/.grok/skills/`（指令 ① 會複製）；**不必**放使用者全域目錄  
+- kv-\* 會進 `{庫根}/.agent/skills/`（指令 ① 會複製）；**不必**放使用者全域目錄  
 
 路徑說明 → [01-開箱導覽](./01-開箱導覽.md)
 
@@ -34,9 +34,9 @@ updated: 2026-07-12
 請載入 kv-bootstrap Skill，依 Bootstrap.md B0→B7：
 
 1. 建立 B1 目錄（含 MEMORY.md、Project/_DailyChange/DailyChange.md 種子）
-2. 複製 skills/kv-*/ 到庫根 .grok/skills/（必須；勿覆寫使用者 ~/.grok/skills/ 內建 Skill）
-3. 建立四 L1 Canon（Grok→MOC→Project→Source）；若本開箱包無詳盡 Canon，從種子建 MRC 並註明可後續對齊完整庫
-4. B7 驗收回報（含 .grok/skills/ 下 15 包 kv-*，含 kv-memory、kv-palette、kv-rebalance）
+2. 複製 skills/kv-*/ 到庫根 .agent/skills/（必須；勿覆寫使用者 ~/.agent/skills/ 內建 Skill）
+3. 建立四 L1 Canon（Workflow→MOC→Project→Source）；若本開箱包無詳盡 Canon，從種子建 MRC 並註明可後續對齊完整庫
+4. B7 驗收回報（含 .agent/skills/ 下 15 包 kv-*，含 kv-memory、kv-palette、kv-rebalance）
 5. 列出庫根檔案樹
 
 未通過驗收前不要寫 Project 筆記。
@@ -123,9 +123,9 @@ updated: 2026-07-12
 ```
 請依 AGENTS.md：
 1. 列出本庫應存在的 15 個 kv-* Skill 名稱（含 kv-memory、kv-palette）
-2. 確認庫根 .grok/skills/ 下各有 SKILL.md（不必檢查 ~/.grok/skills/）
+2. 確認庫根 .agent/skills/ 下各有 SKILL.md（不必檢查 ~/.agent/skills/）
 3. 說明我下一個「請寫入 Project」任務會載入哪些 Skill、依什麼順序
-4. 若 .grok/skills/ 缺失，從 skills/ 複製並回報
+4. 若 .agent/skills/ 缺失，從 skills/ 複製並回報
 ```
 
 ---
@@ -137,7 +137,7 @@ updated: 2026-07-12
 
 已改 skills/kv-*/ 或 AGENTS.md：
 1. python skills/kv-link-scan/scripts/sync_package.py
-2. 確認同步到庫根 .grok/skills/ 與公開開箱包目錄
+2. 確認同步到庫根 .agent/skills/ 與公開開箱包目錄
 3. 確認 MEMORY／DailyChange 種子未被個人 Session 覆寫
 4. 簡報是否可發版
 ```
@@ -165,3 +165,5 @@ updated: 2026-07-12
 | 收工 | ⑩ |
 
 地圖 → [02-架構一頁紙](./02-架構一頁紙.md) · 首頁 → [README](../../README.md)
+
+

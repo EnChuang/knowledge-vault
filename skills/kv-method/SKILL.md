@@ -1,13 +1,6 @@
----
+﻿---
 name: kv-method
-description: >
-  Knowledge Vault first-principles and adversarial review (L-light / L-full).
-  Use for every task (L-light). Use L-full before deliverables, 請寫入, rule changes,
-  renames, or full-library audit. Writes review log to Project/_DailyChange/, not chat.
-when-to-use: >
-  Every task (L-light). L-full on 請寫入, 存入, 建立卡片, deliverables, rule or Skill
-  changes, renames, audit repair, or 建庫開箱 sync.
-allowed-tools: Read, Grep, Glob, Write, StrReplace
+description: Use when performing any task inside the Knowledge Vault. Apply the full delivery review before persistent writes, rule changes, renames, audits, or packaged deliverables.
 metadata:
   short-description: "KV methodology — first principles + adversarial review"
 ---
@@ -16,7 +9,19 @@ metadata:
 
 > **人類用語**：**L-輕**＝輕量審查（討論、草稿）；**L-全**＝完整交付審查（請寫入、改規則、更名、健檢）；日誌寫 [[DailyChange]]。
 
-讀取後依本 Skill 執行；細節 Canon 見 `Grok_rules` §1–§2（方法論擴充）。
+讀取後依本 Skill 執行；細節 Canon 見 `Workflow_rules` §1–§2（方法論擴充）。
+
+## Overview
+
+第一性原理＋對抗審查（L-輕／L-全）。  
+L-全模板：`references/adversarial-review.md`。日誌只寫 DailyChange。
+方針：全庫統一的只有定位（Overview）＋少數硬閘／步驟方向；其餘表述、舉例、臨場策略不制式化，容許容錯與自由發揮。設計型若要鎖風格，再個別補 Reference，不上升成全庫義務。
+
+## Agent 使用步驟
+
+1. 每任務 L-輕（可內心）。
+2. 請寫入／改規則／更名／健檢 → L-全：12 節＋日誌＋Verdict。
+3. Blocked 則不得交付；回覆只摘要 Verdict。
 
 ## 第一性原理（每任務）
 
@@ -79,5 +84,6 @@ metadata:
 ## 與其他 Skill
 
 - 寫入檢查仍走 **kv-flow** §3/§4
-- L-全 不取代讀者自測；自測通過後才跑 L-全
+- L-全 不取代一般筆記自測或使用指南 FAQ／操作覆蓋複核；對應複核通過後才跑 L-全
 - 請寫入交付成功後 → **kv-memory** 視需要更新 `MEMORY.md`（與變更日誌分開）
+

@@ -1,20 +1,24 @@
----
+﻿---
 name: kv-flow
-description: >
-  Knowledge Vault write workflow and pre/post checks (Grok §2–§4, §8).
-  Use when user says 請寫入, 存入, 建立卡片, rename repair, or audit repair.
-  Load kv-method L-full before deliverable writes.
-when-to-use: >
-  請寫入, 存入, 建立卡片, rename repair, audit repair, 健檢修復, 規則寫入後 §3/§4.
-  Default discussion without 請寫入 → §1 summary only (draft).
-allowed-tools: Read, Grep, Glob, Write, StrReplace, Shell
+description: Use when the user explicitly asks to write, save, rename, repair, or otherwise persist changes in the Knowledge Vault. Do not use to mutate files during discussion-only requests.
 metadata:
   short-description: "KV write flow — §3/§4 checks, discussion extension"
 ---
 
 # kv-flow — 寫入流程與檢查
 
-Canon 全文：`Grok_rules.md` §2–§4、§8。執行以本 Skill 為準。
+Canon 全文：`Workflow_rules.md` §2–§4、§8。執行以本 Skill 為準。
+
+## Overview
+
+寫入閘與 §3／§4 檢查：未請寫入只草稿。  
+Canon：`Workflow_rules.md` §2–§4、§8。方針：全庫統一的只有定位（Overview）＋少數硬閘／步驟方向；其餘表述、舉例、臨場策略不制式化，容許容錯與自由發揮。設計型若要鎖風格，再個別補 Reference，不上升成全庫義務。
+
+## Agent 使用步驟
+
+1. 判定是否請寫入；否則只草稿／討論。
+2. 請寫入 → kv-method L-全 → §3 全過 → 寫入 → §4 → 簡報。
+3. 更名／健檢修復走對應分支（E／F）。
 
 ## §1 核心（摘要）
 
@@ -31,8 +35,8 @@ Canon 全文：`Grok_rules.md` §2–§4、§8。執行以本 Skill 為準。
 
 ```
 內容/Source
-  →（引用）kv-source 引讀五步 → kv-project 自測
-  →（討論）蒸餾 → 自測 → 草稿
+  →（引用）kv-source 引讀五步 → kv-project 覆蓋複核（一般筆記自測／指南 FAQ）
+  →（討論）蒸餾 → 覆蓋複核 → 草稿
   → 用戶「請寫入」
   → kv-method L-全（Blocked 則停）
   → §3 全過 → 寫入 → §4 → 簡報
@@ -57,7 +61,7 @@ Canon 全文：`Grok_rules.md` §2–§4、§8。執行以本 Skill 為準。
 
 ### B Project
 
-B1 MOC 連動 · B2 只加本次筆記 · B3 frontmatter+tags · B4 非規則條文 · B5 80%自足＋命題可復述 · B6 三一致命名 · B7 自測通過 · B8 非 Ebook：有 30 秒與收束、禁長散文牆
+B1 MOC 連動 · B2 只加本次筆記 · B3 frontmatter+tags · B4 非規則條文 · B5 80%自足＋命題可復述 · B6 三一致命名 · B7 一般筆記自測或使用指南 FAQ／操作覆蓋複核通過 · B8 非 Ebook：有 30 秒與收束、禁長散文牆
 
 ### C Source
 
@@ -83,11 +87,12 @@ A 可讀/連結/簡報 · B MOC 已更新/格式/標籤 · C 落差/Bootstrap/L0
 
 討論中禁止自動塞問題；結束才問；同意+請寫入才可寫 MOC「待延伸」。
 
-## 工具（Harness）
+## 工具能力（依 Harness 對應）
 
 | 用途 | 工具 |
 |------|------|
-| 讀 Canon／Project／Source | **Read** |
-| 全庫對照、連結、命名殘留 | **Grep**、**Glob** |
-| 請寫入改檔 | **Write**、**StrReplace** |
-| 腳本（kv-link-scan、sync_package） | **Shell** |
+| 讀 Canon／Project／Source | 檔案讀取工具 |
+| 全庫對照、連結、命名殘留 | 優先 `rg`／檔案搜尋 |
+| 請寫入改檔 | Codex 使用 `apply_patch`；其他 Harness 使用其安全編輯工具 |
+| 腳本（kv-link-scan、sync_package） | 終端機命令；Windows 優先 PowerShell |
+

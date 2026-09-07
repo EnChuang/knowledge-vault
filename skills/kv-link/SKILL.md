@@ -1,15 +1,26 @@
----
+﻿---
 name: kv-link
-description: >
-  Knowledge Vault wikilinks — Source piped links vs knowledge nodes, high-frequency
-  nodes, vocabulary. Use when writing content with links or after renames.
+description: Use when writing or repairing Knowledge Vault wikilinks, distinguishing Source file links from knowledge-node links, or aligning links after a rename.
 metadata:
   short-description: "KV wikilinks — Source vs nodes"
 ---
 
 # kv-link — 內部連結
 
-Canon：`Grok_rules.md` §5。
+Canon：`Workflow_rules.md` §5。
+
+## Overview
+
+wikilink 兩類型（Source piped vs 知識節點）與高頻節點。  
+Canon：`Workflow_rules.md` §5。**規則型**。批次維護另載 **kv-link-scan**。
+
+## Agent 使用步驟
+方針：全庫統一的只有定位（Overview）＋少數硬閘／步驟方向；其餘表述、舉例、臨場策略不制式化，容許容錯與自由發揮。設計型若要鎖風格，再個別補 Reference，不上升成全庫義務。
+
+
+1. 寫入含連結時區分 Source／知識節點寫法。
+2. 高頻節點必須 wikilink；優先同專題。
+3. 掃描／修剪需求 → 轉 kv-link-scan。
 
 ## 兩類型（不可混用）
 
@@ -22,7 +33,7 @@ Canon：`Grok_rules.md` §5。
 
 ## 高頻節點（正文必須 wikilink）
 
-`[[AI Agent 工程]]` · `[[Session]]` · `[[MOC]]` · `[[Grok Build]]`
+`[[AI Agent 工程]]` · `[[MEMORY]]` · `[[DailyChange]]` · `[[Architecture-Status]]`
 
 ## 建立順序
 
@@ -30,8 +41,9 @@ Canon：`Grok_rules.md` §5。
 
 ## 批次掃描
 
-全庫／專題**未連結節點**掃描與請寫入套用 → **kv-link-scan**（預設只報告）。
+全庫／專題超連結維護（未連結補上、弱／過密修剪、圖改 Source 路徑）→ **kv-link-scan**（預設只報告；請寫入才改檔）。
 
 ## 用詞
 
 知識庫 · 庫根目錄 · 全庫 · 本實例 → 見 `AGENTS.md`。
+

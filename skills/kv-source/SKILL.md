@@ -1,9 +1,6 @@
 ---
 name: kv-source
-description: >
-  Knowledge Vault Source handling — literature/Ebook/Image links, Ebook page checks,
-  five-step Source 引讀, Ebook default chapter format (Project_rules §12).
-  Use when citing PDFs, ebooks, images, or user points to Source/ files.
+description: Use when the user cites or asks to read a Knowledge Vault Source PDF, ebook, image, video, or literature file, including page verification and source-grounded distillation.
 metadata:
   short-description: "KV Source — 引讀五步, Ebook §12, images"
 ---
@@ -11,6 +8,18 @@ metadata:
 # kv-source — Source 與引讀
 
 Canon：`Source_rules.md`。原文不存在 → 告知用戶，不發明。
+
+## Overview
+
+Source 引讀五步、Ebook／圖片路徑。  
+Canon：`Source_rules.md`。
+方針：全庫統一的只有定位（Overview）＋少數硬閘／步驟方向；其餘表述、舉例、臨場策略不制式化，容許容錯與自由發揮。設計型若要鎖風格，再個別補 Reference，不上升成全庫義務。
+
+## Agent 使用步驟
+
+1. 確認 Source 檔存在；不發明原文。
+2. 依五步引讀；Ebook 預設 §12。
+3. 產出進 Project 時接 kv-project／kv-flow。
 
 ## §1 子資料夾
 

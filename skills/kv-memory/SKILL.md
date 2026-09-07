@@ -1,9 +1,6 @@
 ---
 name: kv-memory
-description: >
-  Knowledge Vault cross-session memory — codec M2 read/write for AI-only MEMORY.md.
-  Dictionary and L0-L3 retrieval here; MEMORY holds HOT+LOG data only. Use on resume,
-  更新記憶, staged pause (ask before write), or after deliverables. DailyChange is human log.
+description: Use when resuming Knowledge Vault work across sessions, reading or updating MEMORY.md, recording a handoff after a deliverable, or pausing work after the user agrees to update memory.
 metadata:
   short-description: "KV memory — M2 codec, MEMORY.md 第二大腦"
 ---
@@ -13,6 +10,18 @@ metadata:
 > **人類用語**（見 [[Architecture-Status]]、[[AGENTS.md]]）：**輕量審查**＝L-輕；**完整交付審查**＝L-全；**機器交班格式**＝M2；**熱區**＝`[HOT]`；**歷史區**＝`[LOG]`。
 
 Canon：庫根 `MEMORY.md` + `AGENTS.md` 記憶分工。人類日誌 → `Project/_DailyChange/DailyChange.md`。
+
+## Overview
+
+MEMORY.md 機器交班：分級讀寫（熱區／搜尋）。  
+階段性收工必問是否更新。
+方針：全庫統一的只有定位（Overview）＋少數硬閘／步驟方向；其餘表述、舉例、臨場策略不制式化，容許容錯與自由發揮。設計型若要鎖風格，再個別補 Reference，不上升成全庫義務。
+
+## Agent 使用步驟
+
+1. 接續脈絡：先讀熱區再搜。
+2. 請寫入交付後視需要更新。
+3. 收工句 → 先問是否更新 MEMORY；未同意不寫。
 
 ## 分工
 
@@ -46,7 +55,7 @@ YYMMDD|kind|payload|ref
 |----|------|
 | `#M2` | codec 版本；升級時改 Skill + 遷移腳本 |
 | `u=` | 最後更新日 YYMMDD |
-| `s=` | Bootstrap 種子短碼 `v18` = 2026-07-06-v18 |
+| `s=` | Bootstrap 種子短碼 `v20` = 2026-09-04-v20 |
 
 ### LOG 列：`YYMMDD|kind|payload|ref`
 
@@ -100,7 +109,7 @@ YYMMDD|kind|payload|ref
 
 | 碼 | 指向 |
 |----|------|
-| `s18` 等 | 種子版本（`s` + 數字 = v18） |
+| `s20` 等 | 種子版本（`s` + 數字 = v20） |
 | `arch` | [[Architecture-Status]] |
 | `dc` | [[DailyChange]] |
 | `palette` | [[配色查詢表]] |

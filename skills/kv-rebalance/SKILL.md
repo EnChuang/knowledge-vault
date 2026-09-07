@@ -1,13 +1,6 @@
 ---
 name: kv-rebalance
-description: >
-  Knowledge Vault topic rebalance — when new Source on the same topic adds points,
-  inventory coverage, propose concept-first remapping of notes + MOC so the map
-  stays balanced (not source-skewed). Report/plan first; execute only on 請寫入.
-when-to-use: >
-  重平衡、重新分類、地圖重排、同專題新 Source 整合、新文獻補點後整理、
-  專題偏重單一來源、筆記地圖不均、拆併筆記以概念重劃。
-allowed-tools: Read, Grep, Glob, Write, StrReplace, Shell
+description: Use when a Knowledge Vault topic becomes source-skewed, overlapping, or uneven after new material, or when the user asks to rebalance, reclassify, split, merge, or rearrange its notes and MOC.
 metadata:
   short-description: "KV topic rebalance — Source 增量後重劃 MOC/筆記"
 ---
@@ -15,6 +8,18 @@ metadata:
 # kv-rebalance — 專題重平衡
 
 > **人類用語**：同專題又來新 Source／新重點時，**不要只往舊筆記尾巴貼**；先盤點覆蓋，再以**概念優先**重劃筆記邊界與 [[MOC]]，避免地圖被第一份素材帶偏。
+
+## Overview
+
+同專題增量後重劃筆記邊界與 MOC（概念優先，防單源偏重）。  
+先報告／計畫，請寫入才改。
+方針：全庫統一的只有定位（Overview）＋少數硬閘／步驟方向；其餘表述、舉例、臨場策略不制式化，容許容錯與自由發揮。設計型若要鎖風格，再個別補 Reference，不上升成全庫義務。
+
+## Agent 使用步驟
+
+1. 盤點覆蓋與偏重。
+2. 提出拆併／更名／MOC 重排計畫。
+3. 請寫入 → 完整交付＋kv-flow；需更名則 kv-rename。
 
 前置：AGENTS 啟動前置。執行細節以本 Skill 為準。涉寫入 → **kv-method** L-全 + **kv-flow** §3/§4。更名／拆檔 → **kv-rename**。引讀新 Source → **kv-source**。正文格式 → **kv-project**。樹格式 → **kv-moc**。
 

@@ -1,4 +1,4 @@
-# Changelog
+﻿# Changelog
 
 本專案遵循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，版本號遵循 [Semantic Versioning](https://semver.org/lang/zh-TW/)。
 
@@ -8,7 +8,7 @@
 
 ### Changed
 
-- 全庫寫作：**中英術語完整**（禁英譯半截詞；給人讀的文案更嚴）— `Project_rules`、`Grok_rules`、kv-project／kv-flow、AGENTS、開箱 README／for-reader  
+- 全庫寫作：**中英術語完整**（禁英譯半截詞；給人讀的文案更嚴）— `Project_rules`、`Workflow_rules`、kv-project／kv-flow、AGENTS、開箱 README／for-reader  
 
 ---
 
@@ -72,3 +72,4 @@
 - 知識長文／Narrative Quality 實驗用語  
 
 **1.1.0** 以庫內現行 **科普掃讀** 為準；長文敘事可經用戶明示「長文／論述」或專題 MOC 整理規範覆蓋，不再當全庫預設。
+

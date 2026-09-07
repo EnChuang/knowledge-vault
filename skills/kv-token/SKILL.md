@@ -1,20 +1,29 @@
----
+﻿---
 name: kv-token
-description: >
-  Knowledge Vault token budget and output discipline. Use for long Source reads,
-  full-library grep, multi-file writes, or when context is large. Cold-start
-  reads only AGENTS + triggered skills, not full Canon unless required.
+description: Use when Knowledge Vault work involves a long Source, large context, full-library search, or multi-file write and requires disciplined progressive loading.
 metadata:
   short-description: "KV token budget — cold start, read discipline"
 ---
 
 # kv-token — 讀取預算與產出分流
 
-## 與 Grok_rules §0
+## Overview
 
-本 Skill 與 `AGENTS.md`「依任務載入 Skill」為**讀取節制**準則。`Grok_rules` §0「幾乎必讀」適用**健檢、改規則、更名**等須對照 Canon 全文的任務；一般討論／草稿若當次 Skill 摘要夠用，**不預載四 L1 全文**。
+讀取預算、冷啟動、產出分流。  
+長文／全庫 grep／多檔寫入時載入。
+方針：全庫統一的只有定位（Overview）＋少數硬閘／步驟方向；其餘表述、舉例、臨場策略不制式化，容許容錯與自由發揮。設計型若要鎖風格，再個別補 Reference，不上升成全庫義務。
 
-衝突時：**用戶指令 ＞ 當次 Skill ＞ 本 Skill ＞ Grok_rules §0 摘要**。
+## Agent 使用步驟
+
+1. 冷啟動只載 AGENTS＋觸發 Skill，勿預載四 L1 全文。
+2. 長 Source／多檔 → 分段讀、止搜。
+3. 產出分流：日誌／交班／正文各歸其位。
+
+## 與 Workflow_rules §0
+
+本 Skill 與 `AGENTS.md`「依任務載入 Skill」為**讀取節制**準則。`Workflow_rules` §0「幾乎必讀」適用**健檢、改規則、更名**等須對照 Canon 全文的任務；一般討論／草稿若當次 Skill 摘要夠用，**不預載四 L1 全文**。
+
+衝突時：**用戶指令 ＞ 當次 Skill ＞ 本 Skill ＞ Workflow_rules §0 摘要**。
 
 ## 冷啟動（預設）
 
@@ -51,3 +60,4 @@ metadata:
 
 - 分段蒸餾（kv-source §4）優於一次傾倒
 - 大規模 grep 結果：待改清單表格式，不逐檔貼全文
+

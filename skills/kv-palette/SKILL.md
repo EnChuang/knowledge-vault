@@ -1,16 +1,25 @@
 ---
 name: kv-palette
-description: >
-  Knowledge Vault color palette lookup table — read/write Project/配色查詢表.md
-  with duplicate detection before append. Use when adding palettes, querying colors
-  for PPT/diagrams, or user says 配色查詢、新增配色、加入色板.
+description: Use when the user asks to query or add a color palette in Knowledge Vault 工具/配色查詢表.md, including palettes for slides, diagrams, or visual design.
 metadata:
   short-description: "KV palette — 配色查詢表去重寫入"
 ---
 
 # kv-palette — 配色查詢表
 
-Canon：`Project_rules.md` §13。唯一檔案：`Project/配色查詢表.md`。
+Canon：`Project_rules.md` §13。唯一檔案：庫根 **`工具/配色查詢表.md`**（**非** `Project/`）。
+
+## Overview
+
+配色查詢表讀寫（`工具/配色查詢表.md`，非 Project 葉）。  
+查詢／新增色板用。
+方針：全庫統一的只有定位（Overview）＋少數硬閘／步驟方向；其餘表述、舉例、臨場策略不制式化，容許容錯與自由發揮。設計型若要鎖風格，再個別補 Reference，不上升成全庫義務。
+
+## Agent 使用步驟
+
+1. 讀配色查詢表；去重後回答或草稿新增。
+2. 請寫入才改表檔。
+3. 不把色板當研究筆記寫進 Project/。
 
 ## 定位
 
@@ -31,7 +40,7 @@ Canon：`Project_rules.md` §13。唯一檔案：`Project/配色查詢表.md`。
 
 ## 讀取（查詢）
 
-1. 讀 `Project/配色查詢表.md` 主表
+1. 讀 `工具/配色查詢表.md` 主表
 2. 依 `P-###` 或暱稱回覆 HEX 列
 3. 未指定 ID → 可依色調（藍／綠／暖色／灰階）簡述候選
 
@@ -59,7 +68,7 @@ sig = lower(hex1) + "|" + lower(hex2) + … + lower(hex8)
 ### 3. 比對既有
 
 ```bash
-grep "palette-sig\\|<!-- sigs" Project/配色查詢表.md
+grep "palette-sig\\|<!-- sigs" "工具/配色查詢表.md"
 ```
 
 比對 `<!-- sigs` 區塊內 `P-###:hex1|…|hex8` 列，或舊版 `<!-- palette-sig: … -->`。

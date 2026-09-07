@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sync library root AGENTS, Bootstrap, skills/kv-* to .grok/skills/ and 建庫開箱（打包用）.
+"""Sync AGENTS, Bootstrap, and skills/kv-* to compatible runtime mirrors and the open-box package.
 
 MEMORY.md and DailyChange in the open-box package are always blank seeds
 (never copy private vault session data).
@@ -12,7 +12,8 @@ from pathlib import Path
 
 VAULT = Path(__file__).resolve().parents[3]
 PKG = VAULT / "建庫開箱（打包用）" / "建庫開箱（打包用）"
-GROK_SKILLS = VAULT / ".grok" / "skills"
+AGENT_SKILLS = VAULT / ".agent" / "skills"
+CODEX_SKILLS = Path.home() / ".codex" / "skills"
 SKILLS_SRC = VAULT / "skills"
 
 BLANK_MEMORY = """---
@@ -22,13 +23,13 @@ tags:
 updated: {today}
 ---
 
-#M2 u={yymmdd} s=v18
+#M2 u={yymmdd} s=v20
 
 [HOT]
 act=-
 pref=ebook§12,fmt:$$+m+10q+ax,lfull>dc,pause>ask
 open=-
-ptr=s18,arch,dc
+ptr=s20,arch,dc
 
 [LOG]
 """
@@ -103,11 +104,13 @@ write_blank_package_seeds()
 
 skill_dirs = sorted(p for p in SKILLS_SRC.glob("kv-*") if p.is_dir())
 for skill_dir in skill_dirs:
-    copy_skill_tree(skill_dir, GROK_SKILLS)
+    copy_skill_tree(skill_dir, CODEX_SKILLS)
+    copy_skill_tree(skill_dir, AGENT_SKILLS)
     copy_skill_tree(skill_dir, PKG / "skills")
 
 count = len(list((PKG / "skills").glob("kv-*/SKILL.md")))
-print(f"Synced skills/kv-* -> {GROK_SKILLS}")
+print(f"Synced skills/kv-* -> {AGENT_SKILLS}")
+print(f"Synced skills/kv-* -> {CODEX_SKILLS}")
 print(f"Synced skills/kv-* -> {PKG / 'skills'}")
 print(f"Synced AGENTS.md, Bootstrap.md -> {PKG}")
 print(f"Package MEMORY + DailyChange -> blank seeds (not vault private data)")

@@ -1,9 +1,6 @@
 ---
 name: kv-rename
-description: >
-  Knowledge Vault rename and move — full-library grep, update paths, MOC, tags,
-  L0/L1, 建庫開箱. Use when renaming topics, notes, Source files, or significant
-  note revisions requiring tag alignment.
+description: Use when renaming or moving a Knowledge Vault topic, note, or Source file, or when a major note revision requires repository-wide tag and reference alignment.
 metadata:
   short-description: "KV rename — full-library grep §10"
 ---
@@ -11,6 +8,18 @@ metadata:
 # kv-rename — 更名與搬移
 
 Canon：`Project_rules.md` §10。不受日常搜尋節制限制。
+
+## Overview
+
+更名／搬移全庫對照更新。  
+Canon／流程銜接 kv-flow §3 E。
+方針：全庫統一的只有定位（Overview）＋少數硬閘／步驟方向；其餘表述、舉例、臨場策略不制式化，容許容錯與自由發揮。設計型若要鎖風格，再個別補 Reference，不上升成全庫義務。
+
+## Agent 使用步驟
+
+1. 全庫 grep 建清單；三一致命名。
+2. 草稿對照；請寫入後改路徑／MOC／標籤。
+3. 寫入後殘留複查。
 
 ## 觸發
 

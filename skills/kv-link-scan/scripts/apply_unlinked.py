@@ -2,18 +2,18 @@
 """Apply wikilinks from kv-link-scan findings (whitelist zones only)."""
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
 from pathlib import Path
 
-# import scan module from same directory
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 import scan_unlinked as scan  # noqa: E402
 
 VAULT = scan.VAULT
-UPDATED = "2026-07-02"
+UPDATED = "2026-08-19"
 MAX_PER_SEGMENT = 2
 
 
@@ -84,13 +84,20 @@ def apply_file(path: Path, nodes: list[str]) -> int:
 
 
 def main() -> None:
-    topic = None
-    if len(sys.argv) > 2 and sys.argv[1] == "--topic":
-        topic = sys.argv[2]
-    nodes = scan.collect_nodes(topic)
+    parser = argparse.ArgumentParser(description="kv-link-scan apply whitelist links")
+    parser.add_argument("--topic", help="Project subfolder name")
+    parser.add_argument(
+        "--exclude",
+        action="append",
+        default=[],
+        help="Extra Project subfolder to skip (repeatable)",
+    )
+    args = parser.parse_args()
+
+    nodes = scan.collect_nodes(args.topic, args.exclude)
     grand = 0
     touched: list[str] = []
-    for path in scan.iter_targets(topic):
+    for path in scan.iter_targets(args.topic, args.exclude):
         n = apply_file(path, nodes)
         if n:
             grand += n

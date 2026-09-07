@@ -1,13 +1,23 @@
----
+﻿---
 name: kv-rules-sync
-description: >
-  Knowledge Vault L0/L1/Skill/Bootstrap sync — cross-reference grep, seed updates,
-  建庫開箱 alignment. Use when writing or changing rules, AGENTS.md, skills, or Bootstrap.md.
+description: Use when changing Knowledge Vault rules, AGENTS.md, Bootstrap.md, or kv-* skills, including synchronization to runtime and open-box copies.
 metadata:
   short-description: "KV rules sync — L0/L1/Skill/seed"
 ---
 
 # kv-rules-sync — 規則同步
+
+## Overview
+
+L0／L1／Skill／Bootstrap 交叉同步與開箱對齊。  
+改規則後必跑。
+方針：全庫統一的只有定位（Overview）＋少數硬閘／步驟方向；其餘表述、舉例、臨場策略不制式化，容許容錯與自由發揮。設計型若要鎖風格，再個別補 Reference，不上升成全庫義務。
+
+## Agent 使用步驟
+
+1. 對照落差（AGENTS、Canon、Skill、Bootstrap）。
+2. 請寫入後改種子／索引；必要時 sync_package。
+3. 開箱包勿帶入個資 MEMORY／DailyChange 正文。
 
 ## 原則
 
@@ -47,9 +57,11 @@ python skills/kv-link-scan/scripts/sync_package.py
 
 | 目標 | 用途 |
 |------|------|
-| `.grok/skills/` | Grok 庫內自動發現（**日常執行**） |
+| `~/.codex/skills/` | Codex 個人全域 Skill（**主要執行**） |
+| `.agent/skills/` | 其他執行載具的相容鏡像 |
 | `建庫開箱（打包用）/建庫開箱（打包用）/` | G9 開箱包（AGENTS、Bootstrap、skills、Review 種子） |
 
-**不會**同步到 `~/.grok/skills/`（全域內建 Skill；勿覆寫 docx、help 等）。
+只同步 `kv-*`；不得覆寫 `~/.codex/skills/.system/` 或其他個人 Skill。
 
 改 Canon 且 Skill 摘要需對齊 → 先改 `skills/kv-*/SKILL.md`，再跑上列腳本。打包前另跑 **kv-audit** G9。
+

@@ -1,8 +1,6 @@
 ---
 name: kv-moc
-description: >
-  Knowledge Vault MOC format — five sections (incl. 整理規範), nested wikilink tree, M1–M10 checks.
-  Use when reading/writing {專題} — MOC.md or syncing MOC after writing sub-notes.
+description: Use when reading, creating, editing, or validating a Knowledge Vault topic MOC, or synchronizing its tree after topic-note changes.
 metadata:
   short-description: "KV MOC — five sections, 整理規範, M1–M10"
 ---
@@ -10,6 +8,18 @@ metadata:
 # kv-moc — 專題 MOC
 
 Canon：`MOC_rules.md`。每專題必須 `Project/{專題}/{專題名稱} — MOC.md`。
+
+## Overview
+
+MOC 五段格式與 M1–M10 檢查。  
+Canon：`MOC_rules.md`。
+方針：全庫統一的只有定位（Overview）＋少數硬閘／步驟方向；其餘表述、舉例、臨場策略不制式化，容許容錯與自由發揮。設計型若要鎖風格，再個別補 Reference，不上升成全庫義務。
+
+## Agent 使用步驟
+
+1. 讀／寫 `{專題} — MOC.md` 時對齊五段。
+2. 子筆記寫入後同步樹與規範。
+3. 跑 M1–M10；缺則補或標待確認。
 
 ## §2 固定結構（順序不可改）
 

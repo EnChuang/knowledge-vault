@@ -1,4 +1,4 @@
-# Python
+﻿# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -12,8 +12,8 @@ Desktop.ini
 *.swp
 *~
 
-# Grok / local runtime (rebuild from skills/ on bootstrap)
-.grok/
+# Agent / local runtime (rebuild from skills/ on bootstrap)
+.agent/
 
 # Local secrets / personal session (never ship)
 .env
@@ -25,3 +25,4 @@ Source/literature/*
 Source/Ebook/*
 Source/Image/*
 !Source/**/.gitkeep
+
